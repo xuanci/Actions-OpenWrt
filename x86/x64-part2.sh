@@ -19,6 +19,9 @@ EOF
 # 禁用
 cat >> .config <<EOF
 # CONFIG_IPV6 is not set
+# CONFIG_DEFAULT_ip6tables is not set
+# CONFIG_DEFAULT_odhcp6c is not set
+# CONFIG_DEFAULT_odhcpd-ipv6only is not set
 EOF
 
 # 专利授权
