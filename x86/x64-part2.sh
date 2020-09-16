@@ -16,6 +16,11 @@ cat >> .config <<EOF
 # CONFIG_TARGET_ROOTFS_EXT4FS is not set
 EOF
 
+# 禁用
+cat >> .config <<EOF
+# CONFIG_IPV6 is not set
+EOF
+
 # 专利授权
 cat >> .config <<EOF
 CONFIG_BUILD_PATENTED=y
