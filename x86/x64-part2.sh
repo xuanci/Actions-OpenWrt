@@ -77,8 +77,8 @@ CONFIG_PACKAGE_automount=y
 CONFIG_PACKAGE_luci=y
 CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_luci-app-upnp=y
-CONFIG_PACKAGE_luci-app-samba4=y
-CONFIG_PACKAGE_luci-app-npc=y
+#CONFIG_PACKAGE_luci-app-samba4=y
+#CONFIG_PACKAGE_luci-app-npc=y
 #CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_PACKAGE_luci-app-nlbwmon=y
 CONFIG_PACKAGE_luci-app-qos=y
@@ -91,10 +91,10 @@ sed -i 's/192.168.1.1/10.1.1.1/g' package/base-files/files/bin/config_generate
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 其它
-sed -i '80c msgstr "额外调整"' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
-sed -i '91c msgstr "启用一些社区驱动的调整参数，这可能会改善 WiFi 下文件的传输速度，如果有多个客户端，则不建议启用。"' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
-sed -i 's/启用 macOS 兼容共享/macOS 兼容共享/g' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
+#sed -i '80c msgstr "额外调整"' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
+#sed -i '91c msgstr "启用一些社区驱动的调整参数，这可能会改善 WiFi 下文件的传输速度，如果有多个客户端，则不建议启用。"' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
+#sed -i 's/启用 macOS 兼容共享/macOS 兼容共享/g' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
 sed -i 's/Shadowsocks、//g' package/OpenClash/luci-app-openclash/i18n/zh-cn/openclash.zh-cn.po
 sed -i 's/ShadowsocksR/Shadowsocks(R)/g' package/OpenClash/luci-app-openclash/i18n/zh-cn/openclash.zh-cn.po
-sed -i 's/注册表镜像/镜像仓库/g' feeds/luci/applications/luci-app-dockerman/po/zh_Hans/dockerman.po
+#sed -i 's/注册表镜像/镜像仓库/g' feeds/luci/applications/luci-app-dockerman/po/zh_Hans/dockerman.po
 sed -i '23,25d' package/luci-theme-argon/luasrc/view/themes/argon/footer.htm
