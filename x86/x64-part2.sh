@@ -11,18 +11,18 @@ CONFIG_TARGET_KERNEL_PARTSIZE=16
 CONFIG_TARGET_ROOTFS_PARTSIZE=300
 EOF
 
-# 取消生成EXT4固件
+# 禁用EXT4固件
 cat >> .config <<EOF
 # CONFIG_TARGET_ROOTFS_EXT4FS is not set
 EOF
 
 # 禁用
-#cat >> .config <<EOF
+cat >> .config <<EOF
 # CONFIG_IPV6 is not set
 # CONFIG_DEFAULT_ip6tables is not set
 # CONFIG_DEFAULT_odhcp6c is not set
 # CONFIG_DEFAULT_odhcpd-ipv6only is not set
-#EOF
+EOF
 
 # 专利授权
 cat >> .config <<EOF
@@ -58,13 +58,13 @@ CONFIG_PACKAGE_ffprobe=y
 EOF
 
 # Docker
-cat >> .config <<EOF
-CONFIG_PACKAGE_docker-ce=y
-CONFIG_DOCKER_KERNEL_OPTIONS=y
-CONFIG_DOCKER_RES_SHAPE=y
-CONFIG_DOCKER_NET_MACVLAN=y
-CONFIG_DOCKER_STO_EXT4=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_docker-ce=y
+#CONFIG_DOCKER_KERNEL_OPTIONS=y
+#CONFIG_DOCKER_RES_SHAPE=y
+#CONFIG_DOCKER_NET_MACVLAN=y
+#CONFIG_DOCKER_STO_EXT4=y
+#EOF
 
 # 界面语言
 cat >> .config <<EOF
@@ -73,12 +73,12 @@ EOF
 
 # 常用软件
 cat >> .config <<EOF
-CONFIG_PACKAGE_automount=y
+#CONFIG_PACKAGE_automount=y
 CONFIG_PACKAGE_luci=y
 CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_luci-app-upnp=y
-CONFIG_PACKAGE_luci-app-samba4=y
-CONFIG_PACKAGE_luci-app-npc=y
+#CONFIG_PACKAGE_luci-app-samba4=y
+#CONFIG_PACKAGE_luci-app-npc=y
 #CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_PACKAGE_luci-app-nlbwmon=y
 CONFIG_PACKAGE_luci-app-qos=y
@@ -88,12 +88,12 @@ EOF
 sed -i 's/192.168.1.1/10.1.1.1/g' package/base-files/files/bin/config_generate
 
 # 默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-edge/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 其它
-sed -i '80c msgstr "额外调整"' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
-sed -i '91c msgstr "启用一些社区驱动的调整参数，这可能会改善 WiFi 下文件的传输速度，如果有多个客户端，则不建议启用。"' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
-sed -i 's/启用 macOS 兼容共享/macOS 兼容共享/g' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
+#sed -i '80c msgstr "额外调整"' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
+#sed -i '91c msgstr "启用一些社区驱动的调整参数，这可能会改善 WiFi 下文件的传输速度，如果有多个客户端，则不建议启用。"' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
+#sed -i 's/启用 macOS 兼容共享/macOS 兼容共享/g' package/feeds/luci/luci-app-samba4/po/zh_Hans/samba4.po
 sed -i 's/Shadowsocks、//g' package/OpenClash/luci-app-openclash/po/zh-cn/openclash.zh-cn.po
 sed -i 's/ShadowsocksR/Shadowsocks(R)/g' package/OpenClash/luci-app-openclash/po/zh-cn/openclash.zh-cn.po
 #sed -i 's/注册表镜像/镜像仓库/g' feeds/luci/applications/luci-app-dockerman/po/zh_Hans/dockerman.po
