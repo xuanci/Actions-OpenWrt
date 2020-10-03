@@ -1,10 +1,10 @@
 # 添加主题/插件
-#git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-git clone https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+#git clone https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
 git clone https://github.com/vernesong/OpenClash.git package/OpenClash
-git clone https://github.com/lloyd18/luci-app-npc.git package/luci-app-npc
-git clone https://github.com/lloyd18/npc.git package/npc
-git clone https://github.com/lloyd18/automount.git package/automount
+#git clone https://github.com/lloyd18/luci-app-npc.git package/luci-app-npc
+#git clone https://github.com/lloyd18/npc.git package/npc
+#git clone https://github.com/lloyd18/automount.git package/automount
 
 # 解决冲突
 #sed -i 's/dnsmasq-full/dnsmasq/g' package/OpenClash/luci-app-openclash/Makefile
