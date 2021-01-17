@@ -60,6 +60,10 @@ CONFIG_PACKAGE_ffmpeg=y
 CONFIG_PACKAGE_ffprobe=y
 EOF
 
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-openclash=y
+EOF
+
 # 常用软件 默认已启用
 #cat >> .config <<EOF
 #CONFIG_PACKAGE_luci=y
