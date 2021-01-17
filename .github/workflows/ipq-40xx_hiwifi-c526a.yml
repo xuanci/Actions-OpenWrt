@@ -2,6 +2,12 @@ name: ipq-40xx_hiwifi-c526a
 
 on:
   repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
   release:
     types: published
   push:
