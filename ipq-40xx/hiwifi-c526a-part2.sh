@@ -62,7 +62,8 @@ EOF
 
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-vssr=y
-CONFIG_PACKAGE_luci-app-nft-qos=y
+CONFIG_PACKAGE_luci-app-vlmcsd=y
+CONFIG_PACKAGE_luci-app-qos-gargoyle=y
 EOF
 
 # 常用软件 默认已启用
