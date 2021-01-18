@@ -1,6 +1,7 @@
 name: ipq-40xx_hiwifi-c526a
 
 on:
+  
   repository_dispatch:
   workflow_dispatch:
     inputs:
@@ -21,6 +22,7 @@ on:
     types: started
 
 env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
   REPO_URL: https://github.com/project-openwrt/openwrt
   REPO_BRANCH: openwrt-18.06
   FEEDS_CONF: feeds.conf.default
