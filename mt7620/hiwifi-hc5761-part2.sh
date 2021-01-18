@@ -6,8 +6,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 
 # 固件架构
 cat >> .config <<EOF
+CONFIG_TARGET_ramips=y
 CONFIG_TARGET_ramips_mt7620=y
-CONFIG_TARGET_ramips_mt7620_DEVICE_hiwifi_hc5761=y
+CONFIG_TARGET_ramips_mt7620_DEVICE_hiwifi_hc5661=y
 EOF
 
 # 禁用 IPV6
