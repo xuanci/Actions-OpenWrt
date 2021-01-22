@@ -76,6 +76,17 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+    - name: Import external feeds
+      working-directory: ./openwrt
+      run: |
+        cd package
+        git clone https://github.com/vernesong/OpenClash.git
+        mv OpenClash/luci-app-openclash/ ./lean
+        rm -rf OpenClash/
+        git clone https://github.com/fw876/helloworld.git
+        mv helloworld/luci-app-ssr-plus/ ./lean
+        rm -rf helloworld/
+
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
