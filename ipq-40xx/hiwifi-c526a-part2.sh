@@ -16,11 +16,6 @@ CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
 CONFIG_PACKAGE_ipv6helper=y
 EOF
 
-# mt7615驱动:
-cat >> .config <<EOF
-CONFIG_PACKAGE_kmod-mt7615e=y
-EOF
-
 # 取消默认启用的包
 cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-filetransfer is not set
@@ -38,6 +33,10 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_kmod-mt7615e is not set
 EOF
 
+# mt7615驱动:
+cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-mt7615e=y
+EOF
 
 # 基本软件:
 cat >> .config <<EOF
