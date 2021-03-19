@@ -8,16 +8,22 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 cat >> .config <<EOF
 CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_DEVICE_hiwifi_c526a=y
-CONFIG_TARGET_BOARD="MT7615"
 EOF
 
-# 禁用 IPV6
-#cat >> .config <<EOF
-#CONFIG_IPV6 is not set
-#EOF
+# IPv6支持:
+cat >> .config <<EOF
+CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+CONFIG_PACKAGE_ipv6helper=y
+EOF
+
+# mt7615驱动:
+cat >> .config <<EOF
+CONFIG_PACKAGE_kmod-mt7615e=y
+EOF
 
 # 取消默认启用的包
 cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-app-filetransfer is not set
 # CONFIG_PACKAGE_luci-app-vsftpd is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus is not set
 # CONFIG_PACKAGE_luci-app-arpbind is not set
@@ -29,6 +35,7 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_v2ray is not set
 # CONFIG_PACKAGE_shadowsocks-libev-ss-redir is not set
 # CONFIG_PACKAGE_shadowsocksr-libev-server is not set
+# CONFIG_PACKAGE_kmod-mt7615e is not set
 EOF
 
 
@@ -73,6 +80,3 @@ CONFIG_PACKAGE_luci-app-samba=y
 CONFIG_PACKAGE_autosamba=y
 CONFIG_PACKAGE_default-settings=y
 EOF
-
-# 其它
-sed -i '21d' package/lean/default-settings/files/zzz-default-settings #禁止网络共享分类到NAS
