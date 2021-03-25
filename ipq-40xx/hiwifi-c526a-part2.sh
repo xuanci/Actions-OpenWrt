@@ -76,6 +76,7 @@ CONFIG_PACKAGE_default-settings=y
 CONFIG_PACKAGE_luci-app-xlnetacc=y
 CONFIG_PACKAGE_block-mount=y
 CONFIG_PACKAGE_luci-app-openvpn-server=y
+CONFIG_PACKAGE_luci-app-rclone=y
 EOF
 
 # 其它
