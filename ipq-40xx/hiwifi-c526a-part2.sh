@@ -18,7 +18,6 @@ EOF
 
 # 取消默认启用的包
 cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-filetransfer is not set
 # CONFIG_PACKAGE_luci-app-vsftpd is not set
 # CONFIG_PACKAGE_luci-app-ssr-plus is not set
 # CONFIG_PACKAGE_luci-app-arpbind is not set
@@ -26,16 +25,12 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-wol is not set
 # CONFIG_PACKAGE_luci-app-turboacc is not set
 # CONFIG_PACKAGE_luci-app-cpufreq is not set
+# CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
 # CONFIG_PACKAGE_luci-app-zerotier is not set
 # CONFIG_PACKAGE_v2ray is not set
 # CONFIG_PACKAGE_shadowsocks-libev-ss-redir is not set
 # CONFIG_PACKAGE_shadowsocksr-libev-server is not set
-# CONFIG_PACKAGE_kmod-mt7615e is not set
-EOF
-
-# mt7615驱动:
-cat >> .config <<EOF
-CONFIG_PACKAGE_kmod-mt7615e=y
+# CONFIG_PACKAGE_block-mount is not set
 EOF
 
 # 基本软件:
@@ -78,4 +73,10 @@ CONFIG_PACKAGE_luci-app-nlbwmon=y
 CONFIG_PACKAGE_luci-app-samba=y
 CONFIG_PACKAGE_autosamba=y
 CONFIG_PACKAGE_default-settings=y
+CONFIG_PACKAGE_luci-app-xlnetacc=y
+CONFIG_PACKAGE_block-mount=y
+CONFIG_PACKAGE_luci-app-openvpn-server=y
 EOF
+
+# 其它
+sed -i '21d' package/lean/default-settings/files/zzz-default-settings #禁止网络共享分类到NAS
