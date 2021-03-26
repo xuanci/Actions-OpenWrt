@@ -30,7 +30,6 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_v2ray is not set
 # CONFIG_PACKAGE_shadowsocks-libev-ss-redir is not set
 # CONFIG_PACKAGE_shadowsocksr-libev-server is not set
-# CONFIG_PACKAGE_block-mount is not set
 EOF
 
 # 基本软件:
@@ -73,10 +72,13 @@ CONFIG_PACKAGE_luci-app-nlbwmon=y
 CONFIG_PACKAGE_luci-app-samba=y
 CONFIG_PACKAGE_autosamba=y
 CONFIG_PACKAGE_default-settings=y
-CONFIG_PACKAGE_luci-app-xlnetacc=y
 CONFIG_PACKAGE_block-mount=y
 CONFIG_PACKAGE_luci-app-openvpn-server=y
 CONFIG_PACKAGE_luci-app-rclone=y
+CONFIG_PACKAGE_kmod-mt76-connac=y
+CONFIG_PACKAGE_kmod-mt7615-common=y
+CONFIG_PACKAGE_kmod-mt7615e=y
+
 EOF
 
 # 其它
