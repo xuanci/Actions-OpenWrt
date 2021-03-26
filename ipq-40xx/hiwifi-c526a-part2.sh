@@ -74,7 +74,6 @@ CONFIG_PACKAGE_autosamba=y
 CONFIG_PACKAGE_default-settings=y
 CONFIG_PACKAGE_block-mount=y
 CONFIG_PACKAGE_luci-app-openvpn-server=y
-CONFIG_PACKAGE_luci-app-rclone=y
 CONFIG_PACKAGE_kmod-mt76-connac=y
 CONFIG_PACKAGE_kmod-mt7615-common=y
 CONFIG_PACKAGE_kmod-mt7615e=y
