@@ -42,7 +42,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@openwrt-18.06
 
     - name: Initialization environment
       env:
